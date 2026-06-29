@@ -1,0 +1,371 @@
+body,
+.prc-PageLayout-PageLayoutRoot,
+.prc-PageLayout-PageLayoutWrapper,
+.prc-PageLayout-ContentWrapper,
+.OverviewContent-module__Box__PF75K {
+	background-color: var(--color-surface);
+	color: var(--color-on-surface);
+	font-family:
+		system-ui,
+		-apple-system,
+		"Segoe UI",
+		Roboto,
+		"Helvetica Neue",
+		sans-serif;
+}
+
+/* ----- Links ----- */
+a,
+.prc-Link-Link {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+a:hover,
+.prc-Link-Link:hover {
+	color: var(--color-on-primary-container);
+	text-decoration: underline;
+}
+.Link--primary {
+	color: var(--color-on-surface);
+}
+.Link--primary:hover {
+	color: var(--color-primary);
+}
+.Link--secondary,
+.Link--muted {
+	color: var(--color-on-surface-variant);
+}
+.Link--secondary:hover,
+.Link--muted:hover {
+	color: var(--color-on-surface);
+}
+
+/* ----- Headings ----- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.prc-Heading-Heading {
+	color: var(--color-on-surface);
+}
+
+/* ----- Containers / Cards / Boxes ----- */
+.Box,
+.Box--overlay,
+.OverviewContent-module__Box_11__F19kY > div,
+.BorderGrid-cell,
+.OverviewRepoFiles-module__Box_3__bBU1C {
+	background-color: var(--color-surface-container);
+	border-color: var(--color-outline-variant);
+	border-radius: 8px;
+}
+
+/* ----- Header (repository title, actions) ----- */
+#repository-container-header,
+.prc-PageLayout-Header {
+	background-color: var(--color-surface-container-low);
+	border-bottom: 1px solid var(--color-outline-variant);
+}
+
+#repo-title-component strong a {
+	color: var(--color-on-surface);
+}
+#repo-title-component strong a:hover {
+	color: var(--color-primary);
+}
+.Label--secondary {
+	background-color: var(--color-secondary-container);
+	color: var(--color-on-secondary-container);
+}
+
+/* ----- Page actions (buttons, counters) ----- */
+.btn,
+.prc-Button-ButtonBase {
+	background-color: var(--color-surface-container-high);
+	color: var(--color-on-surface);
+	border: 1px solid var(--color-outline-variant);
+	border-radius: 6px;
+	transition:
+		background-color 0.2s,
+		border-color 0.2s;
+}
+.btn:hover,
+.prc-Button-ButtonBase:hover {
+	background-color: var(--color-surface-container-highest);
+	border-color: var(--color-outline);
+}
+.btn-primary,
+.prc-Button-Primary,
+.prc-Button-ButtonBase[data-variant="primary"] {
+	background-color: var(--color-primary);
+	color: var(--color-on-primary);
+	border-color: var(--color-primary);
+}
+.btn-primary:hover,
+.prc-Button-Primary:hover,
+.prc-Button-ButtonBase[data-variant="primary"]:hover {
+	background-color: var(--color-primary-container);
+	border-color: var(--color-primary-container);
+	color: var(--color-on-primary-container);
+}
+.btn-danger {
+	background-color: var(--color-error, #ba1a1a);
+	color: #fff;
+}
+.btn-danger:hover {
+	background-color: var(--color-error-container, #f9dedc);
+	color: var(--color-on-error-container, #410e0b);
+}
+
+/* ----- Counters / badges ----- */
+.Counter,
+.prc-CounterLabel-CounterLabel {
+	background-color: var(--color-surface-container-highest);
+	color: var(--color-on-surface-variant);
+	border-radius: 20px;
+	padding: 0 8px;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+/* ----- Branch selector / ref picker ----- */
+.overview-ref-selector,
+.RefSelectorAnchoredOverlay-module__RefSelectorOverlayBtn {
+	background-color: var(--color-surface-container-high);
+	border: 1px solid var(--color-outline-variant);
+	border-radius: 6px;
+	color: var(--color-on-surface);
+}
+.overview-ref-selector:hover,
+.RefSelectorAnchoredOverlay-module__RefSelectorOverlayBtn:hover {
+	background-color: var(--color-surface-container-highest);
+}
+
+/* ----- File list table ----- */
+.Table-module__Box__HZKiQ {
+	background-color: var(--color-surface);
+	border-collapse: collapse;
+}
+.DirectoryContent-module__Box_3__gl6dE {
+	background-color: var(--color-surface-container-low);
+}
+.DirectoryContent-module__OverviewHeaderRow__hOrKy th {
+	background-color: var(--color-surface-container-low);
+	color: var(--color-on-surface-variant);
+	border-bottom: 1px solid var(--color-outline-variant);
+	font-weight: 500;
+}
+.react-directory-row td {
+	border-bottom: 1px solid var(--color-outline-variant);
+	padding: 8px 12px;
+}
+.react-directory-row:hover {
+	background-color: var(--color-surface-container-high);
+}
+.react-directory-filename-column .Link--primary {
+	color: var(--color-on-surface);
+}
+.react-directory-filename-column .Link--primary:hover {
+	color: var(--color-primary);
+}
+.react-directory-commit-message a {
+	color: var(--color-on-surface-variant);
+}
+.react-directory-commit-message a:hover {
+	color: var(--color-on-surface);
+}
+relative-time {
+	color: var(--color-on-surface-variant);
+}
+
+/* ----- Search box (Go to file) ----- */
+.TextInput-wrapper {
+	background-color: var(--color-surface-container-high);
+	border: 1px solid var(--color-outline-variant);
+	border-radius: 6px;
+}
+.TextInput-wrapper:focus-within {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 2px var(--color-primary-container);
+}
+.TextInput-wrapper input {
+	background-color: transparent;
+	color: var(--color-on-surface);
+}
+.TextInput-wrapper input::placeholder {
+	color: var(--color-on-surface-variant);
+}
+
+/* ----- Add file dropdown, Code button, etc. ----- */
+.OverviewContent-module__Box_7__JuRXo .prc-Button-ButtonBase,
+.OverviewContent-module__Box_9__bqMPw .prc-Button-ButtonBase,
+.OverviewContent-module__Box_8__UZCZh .prc-Button-ButtonBase {
+	background-color: var(--color-surface-container-high);
+	border: 1px solid var(--color-outline-variant);
+	color: var(--color-on-surface);
+}
+.OverviewContent-module__Box_7__JuRXo .prc-Button-ButtonBase:hover,
+.OverviewContent-module__Box_9__bqMPw .prc-Button-ButtonBase:hover,
+.OverviewContent-module__Box_8__UZCZh .prc-Button-ButtonBase:hover {
+	background-color: var(--color-surface-container-highest);
+}
+
+/* ----- Sidebar (About, etc.) ----- */
+.prc-PageLayout-Pane-AyzHK {
+	background-color: var(--color-surface-container-low);
+	border-left: 1px solid var(--color-outline-variant);
+}
+.BorderGrid-row {
+	border-bottom: 1px solid var(--color-outline-variant);
+}
+.BorderGrid-row:last-child {
+	border-bottom: none;
+}
+.BorderGrid-cell h2.h4 {
+	color: var(--color-on-surface);
+}
+.BorderGrid-cell .color-fg-muted {
+	color: var(--color-on-surface-variant) !important;
+}
+/* Languages progress bar */
+.Progress {
+	background-color: var(--color-surface-container-highest);
+	border-radius: 4px;
+	overflow: hidden;
+}
+.Progress-item {
+	border-radius: 0;
+}
+/* Suggested workflows */
+.js-notice .Box {
+	background-color: var(--color-surface-container);
+	border-color: var(--color-outline-variant);
+}
+.js-notice .Box:hover {
+	background-color: var(--color-surface-container-high);
+}
+
+/* ----- Markdown / README ----- */
+.markdown-body {
+	color: var(--color-on-surface);
+	background-color: transparent;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+	color: var(--color-on-surface);
+	border-bottom-color: var(--color-outline-variant);
+}
+.markdown-body a {
+	color: var(--color-primary);
+}
+.markdown-body a:hover {
+	color: var(--color-on-primary-container);
+}
+.markdown-body code,
+.markdown-body pre {
+	background-color: var(--color-surface-container-high);
+	color: var(--color-on-surface);
+}
+.markdown-body .highlight pre {
+	background-color: var(--color-surface-container-high);
+	border-radius: 6px;
+}
+.markdown-body table {
+	border-color: var(--color-outline-variant);
+}
+.markdown-body th,
+.markdown-body td {
+	border-color: var(--color-outline-variant);
+}
+.markdown-body blockquote {
+	border-left-color: var(--color-primary);
+	color: var(--color-on-surface-variant);
+}
+
+/* ----- Overlays / modals / dropdowns ----- */
+.Overlay,
+.SelectMenu-modal,
+.details-dialog {
+	background-color: var(--color-surface-container);
+	color: var(--color-on-surface);
+	border: 1px solid var(--color-outline-variant);
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.Overlay-header,
+.SelectMenu-header {
+	background-color: var(--color-surface-container-high);
+	border-bottom: 1px solid var(--color-outline-variant);
+}
+.Overlay-footer {
+	background-color: var(--color-surface-container-high);
+	border-top: 1px solid var(--color-outline-variant);
+}
+.Overlay-closeButton {
+	color: var(--color-on-surface-variant);
+}
+.Overlay-closeButton:hover {
+	color: var(--color-on-surface);
+}
+
+/* ----- Inputs, textareas, select ----- */
+.form-control,
+.form-control:focus,
+input[type="text"],
+input[type="url"],
+textarea {
+	background-color: var(--color-surface-container-high);
+	color: var(--color-on-surface);
+	border: 1px solid var(--color-outline-variant);
+	border-radius: 6px;
+}
+.form-control:focus,
+input:focus,
+textarea:focus {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 2px var(--color-primary-container);
+}
+
+/* ----- Notification / watch / star / fork buttons (group) ----- */
+.BtnGroup .btn,
+.BtnGroup .prc-Button-ButtonBase {
+	background-color: var(--color-surface-container-high);
+	border-color: var(--color-outline-variant);
+}
+.BtnGroup .btn:hover,
+.BtnGroup .prc-Button-ButtonBase:hover {
+	background-color: var(--color-surface-container-highest);
+}
+.BtnGroup .btn-primary {
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+	color: var(--color-on-primary);
+}
+.BtnGroup .btn-primary:hover {
+	background-color: var(--color-primary-container);
+	border-color: var(--color-primary-container);
+	color: var(--color-on-primary-container);
+}
+
+/* ----- Misc: tooltips, badges, etc. ----- */
+.tool-tip,
+.prc-TooltipV2-Tooltip {
+	background-color: var(--color-surface-container-highest);
+	color: var(--color-on-surface);
+	border: 1px solid var(--color-outline-variant);
+	border-radius: 4px;
+}
+
+/* ----- Responsive adjustments (optional) ----- */
+@media (max-width: 767px) {
+	.prc-PageLayout-Pane-AyzHK {
+		border-left: none;
+		border-top: 1px solid var(--color-outline-variant);
+	}
+}

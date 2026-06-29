@@ -1,0 +1,18 @@
+/* 
+@name           Material You Web - GitHub
+@description    Converts GitHub website to Material Design 3, dynamically themed using matugen.
+@author         SunPodder
+*/
+
+@import "../colors.css";
+@import "./header.css";
+@import "./body.css";
+
+/* ---- Smooth transitions for all color changes ---- */
+* {
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease,
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
+}

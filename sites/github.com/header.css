@@ -1,0 +1,191 @@
+/* ---- Main header bar ---- */
+header[role="banner"] {
+	background: var(--color-surface) !important;
+	color: var(--color-on-surface) !important;
+	border-bottom: none !important;
+	box-shadow:
+		0 1px 2px rgba(0, 0, 0, 0.3),
+		0 1px 3px rgba(0, 0, 0, 0.15) !important; /* Elevation 2 */
+	font-family:
+		"Google Sans",
+		"Roboto",
+		system-ui,
+		-apple-system,
+		sans-serif;
+	z-index: 10;
+	transition:
+		background 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+/* ---- Breadcrumbs ---- */
+nav[aria-label="Breadcrumbs"] a,
+nav[aria-label="Breadcrumbs"] button {
+	color: var(--color-on-surface-variant) !important;
+	font-weight: 500;
+	font-size: var(--typescale-title-small);
+	letter-spacing: 0.1px;
+}
+
+/* ---- Icon buttons ---- */
+button[data-component="IconButton"],
+a[data-component="IconButton"] {
+	color: var(--color-on-surface-variant) !important;
+	background: transparent !important;
+	border-radius: 50% !important;
+	width: 40px !important;
+	height: 40px !important;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	transition:
+		background-color 0.25s,
+		color 0.25s;
+}
+
+button[data-component="IconButton"]:hover,
+a[data-component="IconButton"]:hover {
+	background-color: var(--color-surface-variant) !important;
+	color: var(--color-on-surface) !important;
+}
+
+/* ---- Search bar ---- */
+.Search-module__searchButtonGroup__aetw5,
+.search-input-container {
+	background-color: var(--color-surface-variant) !important;
+	border: 1px solid var(--color-outline) !important;
+	border-radius: 24px !important;
+	padding: 0 8px !important;
+	min-height: 40px;
+	transition:
+		background-color 0.25s,
+		border-color 0.25s;
+	display: flex;
+	align-items: center;
+}
+
+.Search-module__searchButtonGroup__aetw5:hover,
+.search-input-container:hover,
+.search-input-container:focus-within {
+	background-color: var(--color-surface-container-high) !important;
+	border-color: var(--color-primary) !important;
+}
+
+.Search-module__searchButtonGroup__aetw5 input,
+.search-input-container input {
+	background: transparent !important;
+	border: none !important;
+	color: var(--color-on-surface) !important;
+	font-size: var(--typescale-body-medium);
+	outline: none !important;
+}
+
+.Search-module__searchButtonGroup__aetw5 input::placeholder {
+	color: var(--color-on-surface-variant);
+	opacity: 0.8;
+}
+
+/* ---- Repository navigation ---- */
+nav[aria-label="Repository"] {
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+nav[aria-label="Repository"] ul {
+	gap: 4px;
+}
+
+nav[aria-label="Repository"] ul li a {
+	color: var(--color-on-surface-variant) !important;
+	font-weight: 500;
+	font-size: var(--typescale-label-large);
+	text-transform: none;
+	letter-spacing: 0.1px;
+	padding: 10px 16px !important;
+	position: relative;
+	border-radius: 20px 20px 0 0 !important;
+	transition:
+		color 0.25s,
+		background-color 0.25s;
+	background: transparent !important;
+}
+
+nav[aria-label="Repository"] ul li a:hover {
+	background-color: var(--color-surface-variant) !important;
+	color: var(--color-on-surface) !important;
+}
+
+/* Active tab */
+nav[aria-label="Repository"] ul li a[aria-current="page"] {
+	color: var(--color-primary) !important;
+	background-color: var(--color-secondary-container) !important;
+}
+
+nav[aria-label="Repository"] ul li a[aria-current="page"]::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	width: 100%;
+	height: 3px;
+	background: var(--color-primary);
+	border-radius: 3px 3px 0 0;
+}
+
+.prc-components-UnderlineWrapper-eT-Yj {
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+/* ---- The global “Create new…” button ---- */
+.GlobalCreateMenu-module__actionMenuButton__Hj_iB {
+	background-color: var(--color-primary) !important;
+	color: var(--color-on-primary) !important;
+	border-radius: 20px !important;
+	padding: 0 16px !important;
+	font-weight: 500;
+	font-size: var(--typescale-label-large);
+	transition:
+		background-color 0.25s,
+		box-shadow 0.25s;
+}
+
+.GlobalCreateMenu-module__actionMenuButton__Hj_iB:hover {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+	filter: brightness(1.05);
+}
+
+/* ---- Copilot & Agents buttons ---- */
+.CopilotItems-module__Wrapper__BFG9q button,
+.CopilotItems-module__Wrapper__BFG9q a {
+	color: var(--color-on-surface-variant) !important;
+	background: transparent !important;
+	border-radius: 50% !important;
+}
+
+.CopilotItems-module__Wrapper__BFG9q button:hover,
+.CopilotItems-module__Wrapper__BFG9q a:hover {
+	background-color: var(--color-surface-variant) !important;
+}
+
+/* ---- User avatar ---- */
+.GlobalNavUserMenu-module__anchor__Dcej6 img {
+	border-radius: 50% !important;
+	border: 2px solid var(--color-outline-variant);
+	transition: border-color 0.25s;
+}
+
+.GlobalNavUserMenu-module__anchor__Dcej6:hover img {
+	border-color: var(--color-primary);
+}
+
+/* ---- Tooltips ---- */
+.prc-TooltipV2-Tooltip-tLeuB {
+	background: var(--color-surface-container-high) !important;
+	color: var(--color-on-surface) !important;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	border-radius: 6px;
+	padding: 4px 8px;
+	font-size: 12px;
+}
