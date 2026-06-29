@@ -1,0 +1,201 @@
+/* ============================================================
+   Material You (M3) Side Navigation Drawer
+   Targets GitHub’s dialog-based global navigation menu.
+   ============================================================ */
+
+/* ---------- Dialog container ---------- */
+[class*="prc-Dialog-Dialog-"] {
+	/* Surface tint + shadow (elevation 3) */
+	background-color: var(--color-surface-container-high);
+	color: var(--color-on-surface);
+	border-radius: 28px;
+	overflow: hidden;
+
+	box-shadow:
+		0 4px 8px 3px rgba(var(--color-shadow, 0, 0, 0), 0.15),
+		0 1px 3px rgba(var(--color-shadow, 0, 0, 0), 0.3);
+}
+
+/* ---------- Header area (logo + close button) ---------- */
+[class*="prc-Dialog-Dialog-"] > [class*="prc-Stack-Stack-"] {
+	padding: 12px 16px 0;
+}
+
+/* GitHub logo colour */
+[class*="prc-Dialog-Dialog-"] svg.octicon-mark-github {
+	color: var(--color-on-surface);
+	fill: currentColor;
+}
+
+/* Close button (invisible variant icon button) */
+[class*="prc-Dialog-Dialog-"] button[class*="prc-Button-IconButton-"] {
+	color: var(--color-on-surface-variant);
+	background: transparent;
+	border-radius: 100px;
+	width: 40px;
+	height: 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s;
+}
+[class*="prc-Dialog-Dialog-"] button[class*="prc-Button-IconButton-"]:hover {
+	background: var(--color-surface-variant);
+}
+[class*="prc-Dialog-Dialog-"]
+	button[class*="prc-Button-IconButton-"]:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+/* ---------- Scrollable region ---------- */
+[class*="prc-ScrollableRegion-"] {
+	padding: 8px 12px 16px;
+}
+
+/* ---------- Navigation list items ---------- */
+[class*="prc-ActionList-ActionListItem-"] {
+	margin-bottom: 2px;
+}
+
+/* Item link / button base style */
+[class*="prc-ActionList-ActionListContent-"] {
+	display: flex;
+	align-items: center;
+	padding: 10px 12px 10px 16px;
+	border-radius: 28px; /* M3 pill shape */
+	color: var(--color-on-surface);
+	text-decoration: none;
+	font-size: var(--typescale-body-medium, 14px);
+	font-weight: 400;
+	letter-spacing: 0.25px;
+	line-height: 1.25rem;
+	transition:
+		background 0.2s,
+		color 0.2s;
+	background: transparent;
+	border: none;
+	width: 100%;
+	cursor: pointer;
+}
+
+/* Hover state */
+[class*="prc-ActionList-ActionListContent-"]:hover {
+	background: var(--color-surface-variant);
+}
+
+/* Focus visible */
+[class*="prc-ActionList-ActionListContent-"]:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: -2px;
+}
+
+/* Active / current item (opt-in via aria-current or .active class) */
+[class*="prc-ActionList-ActionListContent-"][aria-current="page"],
+[class*="prc-ActionList-ActionListContent-"].active {
+	background: var(--color-secondary-container);
+	color: var(--color-on-secondary-container);
+}
+[class*="prc-ActionList-ActionListContent-"][aria-current="page"]
+	[class*="ActionList-LeadingVisual-"]
+	svg,
+[class*="prc-ActionList-ActionListContent-"].active
+	[class*="ActionList-LeadingVisual-"]
+	svg {
+	color: var(--color-on-secondary-container);
+}
+
+/* Leading icon / avatar spacing */
+[class*="prc-ActionList-LeadingVisual-"] {
+	margin-right: 12px;
+	display: flex;
+	align-items: center;
+	color: var(--color-on-surface-variant);
+	fill: currentColor;
+	transition: color 0.2s;
+}
+
+[class*="prc-ActionList-LeadingVisual-"] img[class*="prc-Avatar-Avatar-"] {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+}
+
+/* Label text */
+[class*="prc-ActionList-ItemLabel-"] {
+	font-size: var(--typescale-label-large, 14px);
+	font-weight: 500;
+	letter-spacing: 0.1px;
+	line-height: 1.25rem;
+}
+
+/* ---------- Dividers ---------- */
+[class*="prc-ActionList-Divider-"] {
+	border-top: 1px solid var(--color-outline-variant);
+	margin: 8px 16px;
+}
+
+/* ---------- Group heading (e.g., "Top repositories") ---------- */
+[class*="prc-NavList-GroupHeading-"] {
+	color: var(--color-on-surface-variant);
+	font-size: var(--typescale-title-small, 14px);
+	font-weight: 500;
+	letter-spacing: 0.1px;
+	line-height: 1.25rem;
+	padding: 8px 16px 4px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Search icon button within group heading */
+[class*="prc-NavList-GroupHeading-"] button[class*="prc-Button-IconButton-"] {
+	color: var(--color-on-surface-variant);
+	background: transparent;
+	border-radius: 100px;
+	width: 32px;
+	height: 32px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+[class*="prc-NavList-GroupHeading-"]
+	button[class*="prc-Button-IconButton-"]:hover {
+	background: var(--color-surface-variant);
+}
+
+/* ---------- "Show more" button ---------- */
+[class*="prc-ActionList-ActionListContent-"][data-testid="dynamic-side-panel-items-show-more"] {
+	color: var(--color-on-surface-variant);
+	font-size: var(--typescale-body-medium, 14px);
+	font-weight: 400;
+}
+[class*="prc-ActionList-ActionListContent-"][data-testid="dynamic-side-panel-items-show-more"]:hover {
+	background: var(--color-surface-variant);
+	color: var(--color-on-surface);
+}
+
+/* ---------- Accessibility / tooltip ---------- */
+[class*="prc-TooltipV2-Tooltip-"] {
+	/* not customized, but keep native */
+}
+
+/* ---------- Scrollbar (optional M3 styling) ---------- */
+[class*="prc-ScrollableRegion-"]::-webkit-scrollbar {
+	width: 8px;
+}
+[class*="prc-ScrollableRegion-"]::-webkit-scrollbar-track {
+	background: transparent;
+}
+[class*="prc-ScrollableRegion-"]::-webkit-scrollbar-thumb {
+	background: var(--color-outline-variant);
+	border-radius: 4px;
+}
+[class*="prc-ScrollableRegion-"]::-webkit-scrollbar-thumb:hover {
+	background: var(--color-outline);
+}
+
+/* ---------- Sentinels (invisible) – keep hidden ---------- */
+.sentinel {
+	/* no overrides needed */
+}

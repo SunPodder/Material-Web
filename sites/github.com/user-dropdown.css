@@ -1,0 +1,218 @@
+/* ============================================================
+   Material You – User Menu Dropdown (SunPodder example)
+   Uses M3 design tokens defined in :root
+   ============================================================ */
+
+/* --- Dialog container (the dropdown panel) --- */
+.prc-AnchoredOverlay-AnchoredOverlay-fYg9Z.prc-Overlay-Overlay-jfs-T {
+	/* Surface container (dark enough to separate from background) */
+	background-color: var(--color-surface-container-high);
+	color: var(--color-on-surface);
+	border: none;
+	border-radius: 28px; /* M3 large rounded corner */
+	box-shadow:
+		0px 4px 8px 3px rgba(var(--color-shadow, 0, 0, 0), 0.15),
+		0px 1px 3px 0px rgba(var(--color-shadow, 0, 0, 0), 0.3);
+	padding: 0;
+	overflow: hidden; /* respects border-radius */
+	min-width: 280px; /* typical dropdown width */
+	max-width: 100vw;
+	font-family: "Roboto", "Segoe UI", system-ui, sans-serif;
+	outline: none;
+}
+
+/* Responsive fullscreen (mobile) – GitHub adds data-responsive="fullscreen" */
+@media screen and (max-width: 768px) {
+	.prc-AnchoredOverlay-AnchoredOverlay-fYg9Z.prc-Overlay-Overlay-jfs-T[data-responsive="fullscreen"] {
+		border-radius: 28px 28px 0 0;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		max-height: 80vh;
+	}
+}
+
+/* --- Header block (avatar, name, username, controls) --- */
+.d-flex.tmp-pr-3.tmp-pl-3.tmp-pt-3 {
+	padding: 16px 16px 8px 16px !important; /* override existing utils */
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	background-color: var(--color-surface-container-high);
+	border-bottom: 1px solid var(--color-outline-variant);
+}
+
+/* Avatar */
+.prc-Avatar-Avatar-0xaUi {
+	border-radius: 50%;
+	border: 2px solid var(--color-outline-variant);
+	width: 40px !important;
+	height: 40px !important;
+}
+
+/* User name (text-bold) */
+.text-bold .prc-Truncate-Truncate-2G1eo {
+	font-family: inherit;
+	font-size: var(--typescale-title-small, 14px);
+	font-weight: 500;
+	letter-spacing: 0.1px;
+	color: var(--color-on-surface);
+}
+
+/* Secondary text (username) */
+.fgColor-muted .prc-Truncate-Truncate-2G1eo {
+	font-size: 12px;
+	font-weight: 400;
+	color: var(--color-on-surface-variant);
+}
+
+/* Hide tooltips (they are native browser popovers, we can't fully style them here,
+   but we set them to hidden via aria-hidden – no extra CSS needed) */
+
+/* Buttons inside header (switch, close, create) */
+.prc-Button-ButtonBase-9n-Xk {
+	background: none;
+	border: none;
+	color: var(--color-on-surface-variant);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s;
+	cursor: pointer;
+}
+.prc-Button-ButtonBase-9n-Xk:hover {
+	background-color: rgba(var(--color-primary, 103, 80, 164), 0.08);
+}
+.prc-Button-ButtonBase-9n-Xk:active {
+	background-color: rgba(var(--color-primary, 103, 80, 164), 0.12);
+}
+
+/* --- Action list (menu items) --- */
+.prc-ActionList-ActionList-rPFF2 {
+	list-style: none;
+	margin: 0;
+	padding: 8px 0;
+	background-color: transparent;
+}
+
+.prc-ActionList-ActionListItem-So4vC {
+	display: block;
+}
+
+/* Item button / link – base style */
+.prc-ActionList-ActionListContent-KBb8- {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 16px;
+	width: 100%;
+	text-decoration: none;
+	color: var(--color-on-surface);
+	font-size: var(--typescale-label-large, 14px);
+	font-weight: 400;
+	letter-spacing: 0.1px;
+	line-height: 20px;
+	transition: background-color 0.2s;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+/* Hover state layer */
+.prc-ActionList-ActionListContent-KBb8-:hover {
+	background-color: rgba(var(--color-primary, 103, 80, 164), 0.08);
+}
+
+/* Focus / active state */
+.prc-ActionList-ActionListContent-KBb8-:focus-visible {
+	background-color: rgba(var(--color-primary, 103, 80, 164), 0.12);
+	outline: none;
+}
+
+/* Leading visual (icon wrapper) */
+.prc-ActionList-LeadingVisual-NBr28 {
+	color: var(--color-on-surface-variant);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+}
+.prc-ActionList-LeadingVisual-NBr28 svg,
+.prc-ActionList-LeadingVisual-NBr28 g-emoji {
+	fill: currentColor;
+	width: 18px;
+	height: 18px;
+}
+
+/* Label text */
+.prc-ActionList-ItemLabel-81ohH {
+	color: var(--color-on-surface);
+	flex: 1;
+}
+
+/* Trailing visual (e.g. "Free" badge) */
+.prc-ActionList-TrailingVisual-jwT9C .prc-Label-Label-qG-Zu {
+	background-color: var(--color-primary-container);
+	color: var(--color-on-primary-container);
+	font-size: 12px;
+	font-weight: 500;
+	padding: 2px 12px;
+	border-radius: 8px;
+}
+
+/* Status item ("Working from home") – special background */
+[aria-labelledby*="Working"] .prc-ActionList-ActionListContent-KBb8- {
+	background-color: var(--color-surface-container-low);
+	border-radius: 16px;
+	margin: 8px 12px;
+	padding: 8px 16px;
+}
+
+/* Divider */
+.prc-ActionList-Divider-taVfb {
+	height: 1px;
+	background-color: var(--color-outline-variant);
+	margin: 4px 0;
+}
+
+/* "Sign out" item – use error color */
+.prc-ActionList-ActionListItem-So4vC:last-child
+	.prc-ActionList-LeadingVisual-NBr28 {
+	color: var(--color-error);
+}
+.prc-ActionList-ActionListItem-So4vC:last-child
+	.prc-ActionList-ItemLabel-81ohH {
+	color: var(--color-error);
+}
+
+/* Remove extra spacing from existing utils */
+[class*="tmp-pr-"],
+[class*="tmp-pl-"],
+[class*="tmp-pt-"] {
+	padding: 0; /* reset if needed – selective override */
+}
+
+/* Hide the "Create new..." tooltip (it's a popover) */
+.prc-TooltipV2-Tooltip-tLeuB {
+	display: none !important;
+}
+
+/* Mobile create button – make it a filled tonal button */
+@media screen and (max-width: 768px) {
+	.hide-lg .GlobalCreateMenu-module__actionMenuButton__Hj_iB {
+		background-color: var(--color-secondary-container);
+		color: var(--color-on-secondary-container);
+		border-radius: 20px;
+		padding: 6px 18px;
+		margin: 8px;
+		font-weight: 500;
+	}
+	.hide-lg .GlobalCreateMenu-module__actionMenuButton__Hj_iB:hover {
+		background-color: rgba(var(--color-secondary, 98, 91, 113), 0.08);
+	}
+}
