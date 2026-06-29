@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json.schemastore.org/chrome-manifest",
+	"manifest_version": 3,
+	"name": "Material You Web",
+	"version": "2026.07.01",
+	"description": "Material You for the Web",
+	"permissions": ["storage", "scripting", "activeTab"],
+	"host_permissions": ["<all_urls>"],
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content-script.js"],
+			"run_at": "document_start"
+		}
+	]
+}
