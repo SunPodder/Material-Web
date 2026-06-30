@@ -1,21 +1,25 @@
-import sass from "sass";
+import * as sass from "sass";
 import fs from "node:fs";
-import { log, success, error } from "./utils";
+import { success, error } from "./utils";
 
 export async function buildCss(site: string) {
-    const sitePath = `./sites/${site}`;
-    const stat = fs.statSync(sitePath);
-    if (!stat.isDirectory()) return;
+	const sitePath = `./sites/${site}`;
+	const stat = fs.statSync(sitePath);
+	if (!stat.isDirectory()) return;
 
-    try {
-        await Bun.build({
-            entrypoints: [`${sitePath}/main.css`],
-            minify: process.env.NODE_ENV === "production",
-            outdir: `./dist/sites/${site}/`,
-        });
-        success(`Finished building site: ${site}`);
-    } catch (err) {
-        error(`Error building site: ${site}`);
-        throw err;
-    }
+	try {
+		const output = await sass.compileAsync(`${sitePath}/main.scss`, {
+			style:
+				process.env.NODE_ENV === "production"
+					? "compressed"
+					: "expanded",
+			sourceMap: false,
+		});
+		fs.mkdirSync(`./dist/sites/${site}/`, { recursive: true });
+		fs.writeFileSync(`./dist/sites/${site}/main.css`, output.css);
+		success(`Finished building site: ${site}`);
+	} catch (err) {
+		error(`Error building site: ${site}`);
+		throw err;
+	}
 }

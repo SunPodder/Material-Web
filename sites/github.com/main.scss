@@ -4,11 +4,11 @@
 @author         SunPodder
 */
 
-@import "../colors.css";
-@import "./header.css";
-@import "./body.css";
-@import "./sidebar.css";
-@import "./user-dropdown.css";
+@use "../theme";
+@use "./header";
+@use "./body";
+@use "./sidebar";
+@use "./user-dropdown";
 
 /* ---- Smooth transitions for all color changes ---- */
 * {
